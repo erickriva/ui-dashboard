@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # UI Dashboard
+Ongoing project.
+
 
 ## Screenshots
 ![UI Chat](https://raw.githubusercontent.com/erickriva/ui-dashboard/master/screenshots/chat.jpg)
