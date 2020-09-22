@@ -1,5 +1,5 @@
 import React from "react";
-import { Lock, Person } from "react-bootstrap-icons";
+import { Envelope, Lock, Person } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 
 import PublicLayout from "../../layouts/PublicLayout";
@@ -22,11 +22,15 @@ const SignUp: React.FC = () => {
 						<Title>Sign up</Title>
 
 						<SignInForm>
+							<LabeledInput label="Email">
+								<TextInput icon={<Envelope />} placeholder="Your email address" />
+							</LabeledInput>
+
 							<LabeledInput label="Username">
 								<TextInput icon={<Person />} placeholder="Your username" />
 							</LabeledInput>
 							<LabeledInput label="Password">
-								<TextInput icon={<Lock />} placeholder="Your password" />
+								<TextInput type="password" icon={<Lock />} placeholder="Your password" />
 							</LabeledInput>
 							<Button onClick={() => navigate("/")}>Sign up</Button>
 						</SignInForm>

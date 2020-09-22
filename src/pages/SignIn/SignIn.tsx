@@ -23,11 +23,15 @@ const SignIn: React.FC = () => {
 						<Title>Sign in</Title>
 
 						<SignInForm>
+							<LabeledInput label="Test">
+								<Button onClick={() => navigate("/")}>Sign in</Button>
+							</LabeledInput>
+
 							<LabeledInput label="Username">
 								<TextInput icon={<Person />} placeholder="Your username" />
 							</LabeledInput>
 							<LabeledInput label="Password">
-								<TextInput icon={<Lock />} placeholder="Your password" />
+								<TextInput type="password" icon={<Lock />} placeholder="Your password" />
 							</LabeledInput>
 							<Button onClick={() => navigate("/")}>Sign in</Button>
 						</SignInForm>

@@ -5,6 +5,7 @@ export const StyledTextInputContainer = styled.div`
 	flex-direction: column;
 	gap: 6px;
 	font-size: 1.4rem;
+	border-radius: 4px;
 	background-color: ${props => props.theme.colors.accent};
 
 	&.disabled {

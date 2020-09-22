@@ -76,107 +76,107 @@ const Chats: React.FC = () => {
 					</AllConversationsHeader>
 					<ConversationCards>
 						{[...Array(5)].map((item, index) => (
-							<Card key={uuid()} isActive={index === 0}>
-								<ConversationCard>
-									<Avatar>JM</Avatar>
-									<ConversationCardContent>
-										<ContactNameAndDateContainer>
-											<ContactName>Julia Miglar</ContactName>
-											<MessageDate>7 days ago</MessageDate>
-										</ContactNameAndDateContainer>
-										<ContactMessage>
-											Numerology. Chaldean Numerology. The numerical value of dummy message in
-											Chaldean Numerology is...
-										</ContactMessage>
-									</ConversationCardContent>
-								</ConversationCard>
-							</Card>
+							<ConversationCard key={uuid()} isActive={index === 0}>
+								<Avatar>JM</Avatar>
+								<ConversationCardContent>
+									<ContactNameAndDateContainer>
+										<ContactName>Julia Miglar</ContactName>
+										<MessageDate>7 days ago</MessageDate>
+									</ContactNameAndDateContainer>
+									<ContactMessage>
+										Numerology. Chaldean Numerology. The numerical value of dummy message in
+										Chaldean Numerology is...
+									</ContactMessage>
+								</ConversationCardContent>
+							</ConversationCard>
 						))}
 					</ConversationCards>
 				</Flex>
 
-				<ConversationContent flex={2} flexDirection="column" maxHeight="100vh" gap={0}>
-					<ConversationHeader>
-						<ContactData>
-							<Avatar>JM</Avatar>
-							<ContactNameContainer>
-								<ContactName>Julia Miglar</ContactName>
-								<ContactStatus>Active</ContactStatus>
-							</ContactNameContainer>
-						</ContactData>
+				<Card>
+					<ConversationContent flex={2} flexDirection="column" maxHeight="100vh" gap={0}>
+						<ConversationHeader>
+							<ContactData>
+								<Avatar>JM</Avatar>
+								<ContactNameContainer>
+									<ContactName>Julia Miglar</ContactName>
+									<ContactStatus>Active</ContactStatus>
+								</ContactNameContainer>
+							</ContactData>
 
-						<ContactIcons>
-							<IconButton icon={<Search />} />
-							<IconButton icon={<Folder />} />
-							<IconButton icon={<ThreeDotsVertical />} />
-						</ContactIcons>
-					</ConversationHeader>
+							<ContactIcons>
+								<IconButton icon={<Search />} />
+								<IconButton icon={<Folder />} />
+								<IconButton icon={<ThreeDotsVertical />} />
+							</ContactIcons>
+						</ConversationHeader>
 
-					<ConversationMessagesContainer id="conversation-messages">
-						<ConversationMessages>
-							<OtherPersonMessageContainer>
-								<OtherPersonMessage>
-									<OtherPersonMessageContent>
-										I bought the product yesterday, but having problems to turn it on. The blue
-										lights are on but nothing happens when the machine is activated
-									</OtherPersonMessageContent>
-									<OtherPersonMessageDate>5 days ago</OtherPersonMessageDate>
-								</OtherPersonMessage>
-								<OtherPersonIcons>
-									<SendAttachmentButton icon={<ThreeDots />} />
-									<SendAttachmentButton icon={<Reply />} />
-								</OtherPersonIcons>
-							</OtherPersonMessageContainer>
+						<ConversationMessagesContainer id="conversation-messages">
+							<ConversationMessages>
+								<OtherPersonMessageContainer>
+									<OtherPersonMessage>
+										<OtherPersonMessageContent>
+											I bought the product yesterday, but having problems to turn it on. The blue
+											lights are on but nothing happens when the machine is activated
+										</OtherPersonMessageContent>
+										<OtherPersonMessageDate>5 days ago</OtherPersonMessageDate>
+									</OtherPersonMessage>
+									<OtherPersonIcons>
+										<SendAttachmentButton icon={<ThreeDots />} />
+										<SendAttachmentButton icon={<Reply />} />
+									</OtherPersonIcons>
+								</OtherPersonMessageContainer>
 
-							<MyMessageContainer>
-								<MyMessageContent>Hello Julia</MyMessageContent>
-							</MyMessageContainer>
+								<MyMessageContainer>
+									<MyMessageContent>Hello Julia</MyMessageContent>
+								</MyMessageContainer>
 
-							<MyMessageContainer>
-								<MyMessageContent>OK, can you send me a picture?</MyMessageContent>
-								<MyMessageDate>5 days ago</MyMessageDate>
-							</MyMessageContainer>
+								<MyMessageContainer>
+									<MyMessageContent>OK, can you send me a picture?</MyMessageContent>
+									<MyMessageDate>5 days ago</MyMessageDate>
+								</MyMessageContainer>
 
-							<DateSeparator>
-								<DateSaparatorDescription>Today</DateSaparatorDescription>
-							</DateSeparator>
+								<DateSeparator>
+									<DateSaparatorDescription>Today</DateSaparatorDescription>
+								</DateSeparator>
 
-							<OtherPersonMessageContainer>
-								<OtherPersonMessage>
-									<OtherPersonMessageContent>
-										<FileData>
-											<FileName>Photo - Broken.jpg</FileName>
-											<FileSize>1,3 MB</FileSize>
-										</FileData>
-										<FileDownload>
-											Download <Download />
-										</FileDownload>
-									</OtherPersonMessageContent>
-									<OtherPersonMessageDate>2 minutes ago</OtherPersonMessageDate>
-								</OtherPersonMessage>
-								<OtherPersonIcons>
-									<SendAttachmentButton icon={<ThreeDots />} />
-									<SendAttachmentButton icon={<Reply />} />
-								</OtherPersonIcons>
-							</OtherPersonMessageContainer>
+								<OtherPersonMessageContainer>
+									<OtherPersonMessage>
+										<OtherPersonMessageContent>
+											<FileData>
+												<FileName>Photo - Broken.jpg</FileName>
+												<FileSize>1,3 MB</FileSize>
+											</FileData>
+											<FileDownload>
+												Download <Download />
+											</FileDownload>
+										</OtherPersonMessageContent>
+										<OtherPersonMessageDate>2 minutes ago</OtherPersonMessageDate>
+									</OtherPersonMessage>
+									<OtherPersonIcons>
+										<SendAttachmentButton icon={<ThreeDots />} />
+										<SendAttachmentButton icon={<Reply />} />
+									</OtherPersonIcons>
+								</OtherPersonMessageContainer>
 
-							<MyMessageContainer>
-								<MyMessageContent>Thank you, let me send it to our Technician.</MyMessageContent>
-								<MyMessageDate>Today</MyMessageDate>
-							</MyMessageContainer>
-						</ConversationMessages>
-					</ConversationMessagesContainer>
+								<MyMessageContainer>
+									<MyMessageContent>Thank you, let me send it to our Technician.</MyMessageContent>
+									<MyMessageDate>Today</MyMessageDate>
+								</MyMessageContainer>
+							</ConversationMessages>
+						</ConversationMessagesContainer>
 
-					<SendMessageContainer>
-						<Flex gap={2}>
-							<SendAttachmentButton icon={<Paperclip />} />
-							<SendAttachmentButton icon={<Image />} />
-						</Flex>
+						<SendMessageContainer>
+							<Flex gap={2}>
+								<SendAttachmentButton icon={<Paperclip />} />
+								<SendAttachmentButton icon={<Image />} />
+							</Flex>
 
-						<SendMessageInput placeholder="Write your message" />
-						<SendMessageButton icon={<CursorFill />} />
-					</SendMessageContainer>
-				</ConversationContent>
+							<SendMessageInput placeholder="Write your message" />
+							<SendMessageButton icon={<CursorFill />} />
+						</SendMessageContainer>
+					</ConversationContent>
+				</Card>
 			</Flex>
 		</DefaultLayout>
 	);

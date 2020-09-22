@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../../components/Button";
+import Card from "../../components/Card";
 import Flex from "../../components/Flex";
 import OnHoverScrollbar from "../../components/OnHoverScrollbar";
 import { hex2rgba, lightenOrDarkenColor } from "../../utils/colors";
@@ -33,11 +34,10 @@ export const ConversationCards = styled(OnHoverScrollbar)`
 	overflow-x: hidden !important;
 `;
 
-export const ConversationCard = styled.div`
+export const ConversationCard = styled(Card)`
 	gap: 16px;
 	cursor: pointer;
-	position: relative;
-	display: flex;
+	flex-direction: row;
 `;
 
 export const ConversationCardContent = styled.div`
@@ -62,12 +62,9 @@ export const MessageDate = styled.div`
 `;
 
 /* CONVERSATION CONTENT */
-
 export const ConversationContent = styled(Flex)`
-	border: 1px solid ${props => props.theme.colors.border};
-	border-radius: 4px;
+	margin: -16px;
 	overflow-y: hidden;
-	background-color: ${props => props.theme.colors.accent};
 `;
 
 export const ConversationHeader = styled.div`
