@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+export const LeftContent = styled.div`
+	display: flex;
+	flex: 2 1 auto;
+	align-items: center;
+`;
+
+export const ProjectNameContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
+export const ProjectName = styled.div`
+	font-size: 3rem;
+`;
+export const ProjectSlogan = styled.div``;
+
 export const SignInCardContent = styled.div`
 	display: flex;
 	flex-direction: column;

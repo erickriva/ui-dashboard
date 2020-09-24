@@ -23,6 +23,7 @@ export const AllConversationsHeader = styled.div`
 
 export const AllConversationsTitle = styled.div`
 	font-size: 2.2rem;
+	line-height: 40px;
 `;
 
 export const ConversationCards = styled(OnHoverScrollbar)`
@@ -70,7 +71,7 @@ export const ConversationContent = styled(Flex)`
 export const ConversationHeader = styled.div`
 	background-color: ${props => props.theme.colors.background};
 	padding: 16px;
-	border-bottom: 1px solid ${props => props.theme.colors.border};
+	border-bottom: 2px solid ${props => props.theme.colors.border};
 
 	display: flex;
 	justify-content: space-between;
@@ -115,6 +116,7 @@ export const ContactIcons = styled.div`
 
 export const IconButton = styled(Button)`
 	background-color: ${props => props.theme.colors.accent};
+	border: none;
 
 	&:hover {
 		background-color: ${props => lightenOrDarkenColor(props.theme.colors.accent)};
@@ -199,7 +201,7 @@ export const MyMessageContent = styled.div`
 	border-radius: 4px;
 	padding: 12px 16px;
 	font-size: 1.5rem;
-	border: 1px solid ${props => props.theme.colors.border};
+	border: 2px solid ${props => props.theme.colors.border};
 	overflow: hidden;
 `;
 
@@ -211,7 +213,7 @@ export const MyMessageDate = styled.div`
 `;
 
 export const DateSeparator = styled.div`
-	border-bottom: 1px solid #888888;
+	border-bottom: 2px solid #888888;
 	position: relative;
 	margin: 10px 30px;
 `;
@@ -272,7 +274,9 @@ export const SendMessageContainer = styled.div`
 	padding: 8px 16px;
 	justify-content: center;
 	align-items: center;
-	border-top: 1px solid #888888;
+
+	box-shadow: 0px 0px 10px 6px ${props => hex2rgba(props.theme.colors.border, 0.4)};
+	z-index: 1;
 `;
 
 export const SendMessageInput = styled.input`
@@ -285,13 +289,17 @@ export const SendMessageInput = styled.input`
 `;
 
 export const SendMessageButton = styled(Button)`
+	border: none;
+	color: #ffffff;
+
 	& svg {
-		color: #ffffff;
+		color: inherit;
 	}
 `;
 
 export const SendAttachmentButton = styled(Button)`
 	background-color: transparent;
+	border: none;
 
 	&:hover {
 		background-color: ${props => props.theme.colors.border};

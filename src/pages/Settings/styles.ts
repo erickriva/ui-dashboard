@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SettingsTitle = styled.div`
 	font-size: 2.2rem;
+	line-height: 40px;
 `;
 
 export const SettingsList = styled.div`

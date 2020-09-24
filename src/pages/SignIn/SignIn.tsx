@@ -9,7 +9,17 @@ import Flex from "../../components/Flex";
 import TextInput from "../../components/Input/TextInput";
 import Link from "../../components/Link";
 
-import { Label, LinkContainer, SignInCardContent, SignInForm, Title } from "./styles";
+import {
+	Label,
+	LinkContainer,
+	ProjectName,
+	ProjectNameContainer,
+	ProjectSlogan,
+	SignInCardContent,
+	SignInForm,
+	Title,
+	LeftContent
+} from "./styles";
 import LabeledInput from "../../components/LabeledInput";
 
 const SignIn: React.FC = () => {
@@ -17,7 +27,13 @@ const SignIn: React.FC = () => {
 
 	return (
 		<PublicLayout>
-			<Flex flex="0 0 40%">
+			<Flex flex="0 0 75%">
+				<LeftContent>
+					<ProjectNameContainer>
+						<ProjectName>Project Name</ProjectName>
+						<ProjectSlogan>Project Slogan</ProjectSlogan>
+					</ProjectNameContainer>
+				</LeftContent>
 				<Card>
 					<SignInCardContent>
 						<Title>Sign in</Title>

@@ -42,7 +42,9 @@ import {
 	ProfileImageAndNameContainer,
 	AddFriendButton,
 	ProfileButtonsContainer,
-	PostCard
+	PostCard,
+	StatsContainer,
+	RightContent
 } from "./styles";
 
 const Profile: React.FC = () => {
@@ -62,41 +64,44 @@ const Profile: React.FC = () => {
 							</ProfileNameContainer>
 						</ProfileImageAndNameContainer>
 
-						<Flex flexDirection="column">
-							<Flex>
-								<Flex
-									gap={0}
-									flexGrow={1}
-									flexDirection="column"
-									justifyContent="center"
-									style={{ textAlign: "center" }}>
-									<Number>48300</Number>
-									<Description>likes</Description>
+						<RightContent>
+							<StatsContainer>
+								<Flex>
+									<Flex
+										gap={0}
+										flexGrow={1}
+										flexDirection="column"
+										justifyContent="center"
+										style={{ textAlign: "center" }}>
+										<Number>48300</Number>
+										<Description>likes</Description>
+									</Flex>
+									<Flex
+										gap={0}
+										flexGrow={1}
+										flexDirection="column"
+										justifyContent="center"
+										style={{ textAlign: "center" }}>
+										<Number>1 mi</Number>
+										<Description>fans</Description>
+									</Flex>
 								</Flex>
-								<Flex
-									gap={0}
-									flexGrow={1}
-									flexDirection="column"
-									justifyContent="center"
-									style={{ textAlign: "center" }}>
-									<Number>1 mi</Number>
-									<Description>fans</Description>
-								</Flex>
-							</Flex>
-						</Flex>
-						<ProfileButtonsContainer>
-							<AddFriendButton icon={<Plus />}>Add as friend</AddFriendButton>
+							</StatsContainer>
 
-							<DropdownMenu
-								options={[
-									{
-										text: "See friendship",
-										onClick: () => {}
-									}
-								]}>
-								<AddFriendButton icon={<ThreeDotsVertical />} />
-							</DropdownMenu>
-						</ProfileButtonsContainer>
+							<ProfileButtonsContainer>
+								<AddFriendButton icon={<Plus />}>Add as friend</AddFriendButton>
+
+								<DropdownMenu
+									options={[
+										{
+											text: "See friendship",
+											onClick: () => {}
+										}
+									]}>
+									<AddFriendButton icon={<ThreeDotsVertical />} />
+								</DropdownMenu>
+							</ProfileButtonsContainer>
+						</RightContent>
 					</ProfileData>
 
 					<Flex gap={32}>

@@ -2,13 +2,23 @@ import React from "react";
 
 import classnames from "classnames";
 
-import { Container, LoadingIcon, Content } from "./styles";
+import { Container, LoadingIcon, Content, Label } from "./styles";
 import { ButtonProps } from "./types";
 import { ArrowRepeat } from "react-bootstrap-icons";
 
-const Button: React.FC<ButtonProps> = ({ className, icon, isLoading, children, visualType = "default", ...props }) => {
+const Button: React.FC<ButtonProps> = ({
+	className,
+	outline,
+	icon,
+	disabled,
+	isLoading,
+	children,
+	visualType = "default",
+	...props
+}) => {
 	const buttonClassName = classnames(className, {
-		onlyIcon: icon && !children
+		onlyIcon: icon && !children,
+		outline
 	});
 
 	return (
@@ -16,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({ className, icon, isLoading, children, v
 			{...props}
 			className={buttonClassName}
 			visualType={visualType}
-			disabled={isLoading}
+			disabled={isLoading || disabled}
 			isLoading={isLoading}>
 			<LoadingIcon>
 				<ArrowRepeat />
@@ -24,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({ className, icon, isLoading, children, v
 
 			<Content>
 				{icon}
-				{children}
+				{children && <Label>{children}</Label>}
 			</Content>
 		</Container>
 	);

@@ -5,4 +5,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 	onClick?: () => void;
 	visualType?: VisualType;
 	isLoading?: boolean;
+	children?: string;
+	outline?: boolean;
 }

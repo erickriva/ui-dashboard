@@ -4,13 +4,16 @@ import { hex2rgba, lightenOrDarkenColor } from "../../utils/colors";
 
 export const LoadingIcon = styled.div``;
 export const Content = styled.div``;
+export const Label = styled.div``;
 
-export const Container = styled.button<ButtonProps>`
+export const Container = styled.button<Omit<ButtonProps, "children">>`
 	background-color: ${props =>
 		props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default};
 	color: #ffffff;
 	cursor: pointer;
+	font-weight: bold;
 
+	border: 2px solid transparent;
 	box-shadow: 0px 0px 10px -1px ${props => hex2rgba(props.theme.colors.border, 0.2)};
 
 	padding: 0 22px;
@@ -23,6 +26,20 @@ export const Container = styled.button<ButtonProps>`
 	&:hover {
 		background-color: ${props =>
 			lightenOrDarkenColor(props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default)};
+	}
+
+	&.outline {
+		color: ${props => (props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default)};
+		background-color: transparent;
+		border-color: ${props =>
+			lightenOrDarkenColor(props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default)};
+
+		&:hover {
+			color: ${props =>
+				lightenOrDarkenColor(
+					props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default
+				)};
+		}
 	}
 
 	&.onlyIcon {

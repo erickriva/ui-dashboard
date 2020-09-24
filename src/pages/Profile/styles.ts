@@ -8,9 +8,11 @@ export const ProfileData = styled.div`
 	gap: 16px;
 	flex-grow: 1;
 	flex-shrink: 0;
-	padding: 42px;
+	padding: 32px 42px;
+	height: 200px;
 	position: relative;
 	z-index: 0;
+	border-radius: 4px;
 	margin-bottom: 30px;
 	justify-content: space-between;
 	background-color: #111111;
@@ -31,9 +33,8 @@ export const ProfileDataBackgroundImage = styled.img`
 	z-index: -1;
 	height: 100%;
 	object-fit: cover;
-	border-radius: 4px;
-
 	filter: brightness(40%);
+	border-radius: 4px;
 `;
 
 export const ProfileImage = styled.img`
@@ -41,7 +42,7 @@ export const ProfileImage = styled.img`
 	height: auto;
 	border-radius: 50%;
 	background-color: #888888;
-	border: 1px solid #888888;
+	border: 2px solid #888888;
 	align-self: center;
 `;
 
@@ -64,8 +65,13 @@ export const ProfileOccupation = styled.div`
 `;
 
 export const Separator = styled.div`
-	border-bottom: 1px solid #888888;
+	border-bottom: 2px solid #888888;
 	margin: 8px 0;
+`;
+
+export const StatsContainer = styled.div`
+	display: flex;
+	gap: 16px;
 `;
 
 export const Number = styled.h3`
@@ -77,10 +83,14 @@ export const Description = styled.div`
 	font-size: 1.5rem;
 `;
 
+export const RightContent = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+`;
+
 export const ProfileButtonsContainer = styled.div`
-	right: 42px;
-	bottom: 26px;
-	position: absolute;
 	display: flex;
 	gap: 16px;
 `;
@@ -132,7 +142,7 @@ export const Friend = styled.img`
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	border: 1px solid #888888;
+	border: 2px solid #888888;
 	margin-top: 8px;
 `;
 
@@ -140,7 +150,7 @@ export const MoreFriends = styled.div`
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	border: 1px solid #888888;
+	border: 2px solid #888888;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -190,8 +200,8 @@ export const Posts = styled.div`
 `;
 
 export const PostsTitle = styled.div`
-	color: ${props => props.theme.colors.textDark};
 	font-size: 2.4rem;
+	line-height: 40px;
 `;
 
 export const PostsList = styled.div`
@@ -214,7 +224,7 @@ export const PostUserPicture = styled.img`
 	height: 40px;
 	border-radius: 50%;
 	flex-shrink: 0;
-	border: 1px solid #888888;
+	border: 2px solid #888888;
 `;
 
 export const PostContentContainer = styled.div`

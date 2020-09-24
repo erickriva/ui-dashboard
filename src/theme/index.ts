@@ -26,8 +26,8 @@ export const dark: Theme = {
 		textLight: "#212121",
 
 		default: "#2165c7",
-		success: "#22521e",
-		danger: "#b70000",
-		warning: "#b96a00"
+		success: "#469040",
+		danger: "#ff8484",
+		warning: "#ffc359"
 	}
 };

@@ -56,6 +56,6 @@ export const MenuOption = styled.div`
 `;
 
 export const Separator = styled.div`
-	border-bottom: 1px solid ${props => props.theme.colors.border};
+	border-bottom: 2px solid ${props => props.theme.colors.border};
 	margin: 16px -16px 0;
 `;

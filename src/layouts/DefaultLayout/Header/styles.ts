@@ -109,7 +109,7 @@ export const UserPicture = styled.img`
 	width: 40px;
 	height: 40px;
 	border-radius: 20px;
-	border: 1px solid #888888;
+	border: 2px solid #888888;
 `;
 
 export const UserName = styled.div`
