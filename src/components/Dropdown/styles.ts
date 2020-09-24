@@ -1,27 +1,27 @@
 import styled from "styled-components";
 import { lightenOrDarkenColor } from "../../utils/colors";
 
-export const Container = styled.div`
+export const StyledDropdownContentContainer = styled.div`
 	position: relative;
 `;
 
-export const Title = styled.div`
+export const StyledDropdownContentTitle = styled.div`
 	font-size: 1.4rem;
 	color: ${props => props.theme.colors.textDark};
 	font-weight: bold;
 `;
 
-export const Content = styled.div``;
+export const StyledDropdownContentContent = styled.div``;
 
-export const DropdownContent = styled.div`
+export const StyledDropdownContent = styled.div`
 	margin: 0 -16px -16px;
 `;
 
-export const Dropdown = styled.div`
+export const StyledDropdownContentDropdown = styled.div`
 	padding: 16px;
 `;
 
-export const Menu = styled.div`
+export const StyledDropdownContentMenu = styled.div`
 	position: absolute;
 	background-color: ${props => props.theme.colors.accent};
 	z-index: 999;
@@ -37,7 +37,7 @@ export const Menu = styled.div`
 	}
 `;
 
-export const MenuOption = styled.div`
+export const StyledDropdownContentMenuOption = styled.div`
 	transition: background-color 0.2s;
 	cursor: pointer;
 	font-size: 1.3rem;
@@ -55,7 +55,7 @@ export const MenuOption = styled.div`
 	}
 `;
 
-export const Separator = styled.div`
+export const StyledDropdownContentSeparator = styled.div`
 	border-bottom: 2px solid ${props => props.theme.colors.border};
 	margin: 16px -16px 0;
 `;

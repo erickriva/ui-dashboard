@@ -1,6 +1,12 @@
-import { Theme } from "./types";
+import { Theme, ThemeType } from "./types";
 
-export const light: Theme = {
+const commonColors = {
+	textDark: "#212121",
+	textLight: "#ffffff",
+	gray: "#888888"
+};
+
+const light: Theme = {
 	name: "light",
 	colors: {
 		accent: "#ffffff",
@@ -16,7 +22,7 @@ export const light: Theme = {
 	}
 };
 
-export const dark: Theme = {
+const dark: Theme = {
 	name: "dark",
 	colors: {
 		accent: "#212121",
@@ -30,4 +36,11 @@ export const dark: Theme = {
 		danger: "#ff8484",
 		warning: "#ffc359"
 	}
+};
+
+const themes = [light, dark];
+
+export const getTheme = (themeName: ThemeType) => {
+	let themeToReturn = { ...(themes.find(theme => theme.name === themeName) ?? themes[0]), commonColors };
+	return themeToReturn;
 };

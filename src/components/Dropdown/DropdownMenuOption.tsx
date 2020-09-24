@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { MenuOption } from "./styles";
+import { StyledDropdownContentMenuOption } from "./styles";
 import Switch from "../Switch";
 import { LinkOption, CheckOption } from "./types";
 
@@ -21,33 +21,31 @@ const DropdownMenuOption: React.FC<Props> = ({ option, closeOnOptionClick, close
 	const [checked, setChecked] = useState(initialValue);
 
 	if (isCheckOption(option)) {
-		const onClick = (ev: any) => {
-			setChecked(!checked);
-			option.onChange(!checked);
-
-			if (closeOnOptionClick) closeMenu();
-		};
-
 		return (
-			<MenuOption onClick={onClick}>
+			<StyledDropdownContentMenuOption
+				onClick={() => {
+					setChecked(!checked);
+					option.onChange(!checked);
+					if (closeOnOptionClick) closeMenu();
+				}}>
 				{option.text}
 				<Switch
-					// removeClickListener={true}
-					value={checked ?? false}
+					// removeClickListener
+					value={checked}
 					onChange={checked => option.onChange(checked)}
 				/>
-			</MenuOption>
+			</StyledDropdownContentMenuOption>
 		);
 	}
 
 	return (
-		<MenuOption
+		<StyledDropdownContentMenuOption
 			onClick={() => {
 				if (closeOnOptionClick) closeMenu();
 				option.onClick();
 			}}>
 			{option.text}
-		</MenuOption>
+		</StyledDropdownContentMenuOption>
 	);
 };
 

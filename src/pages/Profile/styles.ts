@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Button from "../../components/Button";
+import { Button, IconButton } from "../../components/Button";
+
 import Card from "../../components/Card";
 import { lightenOrDarkenColor } from "../../utils/colors";
 
@@ -41,8 +42,8 @@ export const ProfileImage = styled.img`
 	width: 100px;
 	height: auto;
 	border-radius: 50%;
-	background-color: #888888;
-	border: 2px solid #888888;
+	background-color: ${props => props.theme.commonColors.gray};
+	border: 2px solid ${props => props.theme.commonColors.gray};
 	align-self: center;
 `;
 
@@ -65,7 +66,7 @@ export const ProfileOccupation = styled.div`
 `;
 
 export const Separator = styled.div`
-	border-bottom: 2px solid #888888;
+	border-bottom: 2px solid ${props => props.theme.commonColors.gray};
 	margin: 8px 0;
 `;
 
@@ -79,7 +80,7 @@ export const Number = styled.h3`
 `;
 
 export const Description = styled.div`
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 	font-size: 1.5rem;
 `;
 
@@ -93,6 +94,14 @@ export const RightContent = styled.div`
 export const ProfileButtonsContainer = styled.div`
 	display: flex;
 	gap: 16px;
+`;
+
+export const OverflowButton = styled(IconButton)`
+	background-color: rgba(255, 255, 255, 0.2);
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
 `;
 
 export const AddFriendButton = styled(Button)`
@@ -142,7 +151,7 @@ export const Friend = styled.img`
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	border: 2px solid #888888;
+	border: 2px solid ${props => props.theme.commonColors.gray};
 	margin-top: 8px;
 `;
 
@@ -150,7 +159,7 @@ export const MoreFriends = styled.div`
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	border: 2px solid #888888;
+	border: 2px solid ${props => props.theme.commonColors.gray};
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -224,7 +233,7 @@ export const PostUserPicture = styled.img`
 	height: 40px;
 	border-radius: 50%;
 	flex-shrink: 0;
-	border: 2px solid #888888;
+	border: 2px solid ${props => props.theme.commonColors.gray};
 `;
 
 export const PostContentContainer = styled.div`
@@ -238,5 +247,5 @@ export const PostContent = styled.div`
 `;
 
 export const PostDate = styled.div`
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 `;

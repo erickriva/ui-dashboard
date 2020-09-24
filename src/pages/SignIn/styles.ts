@@ -23,10 +23,6 @@ export const SignInCardContent = styled.div`
 	padding: 16px;
 `;
 
-export const Title = styled.div`
-	font-size: 2.2rem;
-`;
-
 export const SignInForm = styled.div`
 	display: flex;
 	flex-direction: column;

@@ -2,10 +2,11 @@ import React from "react";
 import { ArrowRight, Plus, ThreeDotsVertical } from "react-bootstrap-icons";
 import { v4 as uuid } from "uuid";
 
-import Button from "../../components/Button";
+import { Button } from "../../components/Button";
 import Card from "../../components/Card";
 import { DropdownMenu } from "../../components/Dropdown";
 import Flex from "../../components/Flex";
+import Title from "../../components/Title";
 import DefaultLayout from "../../layouts/DefaultLayout";
 
 import {
@@ -44,7 +45,8 @@ import {
 	ProfileButtonsContainer,
 	PostCard,
 	StatsContainer,
-	RightContent
+	RightContent,
+	OverflowButton
 } from "./styles";
 
 const Profile: React.FC = () => {
@@ -89,7 +91,7 @@ const Profile: React.FC = () => {
 							</StatsContainer>
 
 							<ProfileButtonsContainer>
-								<AddFriendButton icon={<Plus />}>Add as friend</AddFriendButton>
+								<AddFriendButton>Add as friend</AddFriendButton>
 
 								<DropdownMenu
 									options={[
@@ -98,7 +100,9 @@ const Profile: React.FC = () => {
 											onClick: () => {}
 										}
 									]}>
-									<AddFriendButton icon={<ThreeDotsVertical />} />
+									<OverflowButton>
+										<ThreeDotsVertical />
+									</OverflowButton>
 								</DropdownMenu>
 							</ProfileButtonsContainer>
 						</RightContent>
@@ -107,7 +111,7 @@ const Profile: React.FC = () => {
 					<Flex gap={32}>
 						<Flex flexDirection="column" padding="0 0 16px 0">
 							<Posts>
-								<PostsTitle>My posts</PostsTitle>
+								<Title title="My posts" />
 								<PostsList>
 									{[...Array(8)].map(item => (
 										<PostCard key={uuid()}>
@@ -129,7 +133,7 @@ const Profile: React.FC = () => {
 
 						<Flex flex="0 0 30%" flexDirection="column">
 							<Flex flexDirection="column" style={{ position: "sticky", top: 0 }}>
-								<PostsTitle>Biography</PostsTitle>
+								<Title title="Biography" />
 								{/* <FriendsListContainer>
 									<FriendsList>
 										<Friend src="https://avataaars.io/?avatarStyle=Transparent&topType=Eyepatch&facialHairType=Blank&clotheType=Overall&clotheColor=Pink&eyeType=Squint&eyebrowType=RaisedExcited&mouthType=Tongue&skinColor=Brown" />

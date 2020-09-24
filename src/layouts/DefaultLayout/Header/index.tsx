@@ -3,10 +3,10 @@ import { Bell, CaretDownFill, Chat, ChatLeft, Plus } from "react-bootstrap-icons
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 
-import Button from "../../../components/Button";
 import { DropdownContent, DropdownMenu } from "../../../components/Dropdown";
 import { MyThemeContext } from "../../../contexts/ThemeContext";
 import NotificationsFragment from "../../../fragments/NotificationsFragment";
+import { routes } from "../../../routes";
 
 import {
 	Container,
@@ -34,8 +34,6 @@ const Header: React.FC = ({ ...props }) => {
 			</Contact>
 
 			<UserOptions>
-				{/* <Button icon={<Plus />}>New Conversation</Button> */}
-
 				<IconsContainer>
 					<MenuItem>
 						<ChatLeft />
@@ -58,7 +56,7 @@ const Header: React.FC = ({ ...props }) => {
 							value: darkMode,
 							onChange: newValue => toggleDarkMode()
 						},
-						{ text: "Logout", onClick: () => navigate("/signin") }
+						{ text: "Logout", onClick: () => navigate(routes.SignIn) }
 					]}>
 					<UserData>
 						<UserPicture src="https://avataaars.io/?avatarStyle=Transparent&topType=LongHairDreads&accessoriesType=Wayfarers&hairColor=PastelPink&facialHairType=BeardLight&facialHairColor=Brown&clotheType=Hoodie&clotheColor=PastelYellow&eyeType=Squint&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light" />

@@ -14,7 +14,7 @@ export const StyledTextInputContainer = styled.div`
 `;
 
 export const StyledTextInputTextArea = styled.textarea`
-	z-index: 2;
+	z-index: 1;
 	padding: 16px;
 	min-height: 100px;
 	border-radius: 4px;
@@ -27,7 +27,7 @@ export const StyledTextInputTextArea = styled.textarea`
 	}
 
 	&::placeholder {
-		color: #888888;
+		color: ${props => props.theme.commonColors.gray};
 	}
 
 	&.hasSuffix {
@@ -45,7 +45,7 @@ export const StyledTextInputTextArea = styled.textarea`
 `;
 
 export const StyledTextInputInput = styled.input`
-	z-index: 2;
+	z-index: 1;
 	padding: 16px;
 	height: 45px;
 	border-radius: 4px;
@@ -58,7 +58,7 @@ export const StyledTextInputInput = styled.input`
 	}
 
 	&::placeholder {
-		color: #888888;
+		color: ${props => props.theme.commonColors.gray};
 	}
 
 	&.hasSuffix {

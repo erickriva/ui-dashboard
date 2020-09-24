@@ -14,6 +14,7 @@ import { settingsOptions } from "./options";
 import { useNavigate, useParams } from "react-router-dom";
 import { useRoute } from "../../utils/useRoute";
 import { SettingsTabContext } from "../../contexts/SettingsTabContext";
+import Title from "../../components/Title";
 
 const Settings: React.FC = () => {
 	const LOCAL_STORAGE_KEY = "settings-option";
@@ -35,7 +36,7 @@ const Settings: React.FC = () => {
 					flexDirection="column"
 					flex="0 0 25%"
 					style={{ height: "fit-content", position: "sticky", top: 0 }}>
-					<SettingsTitle>Settings</SettingsTitle>
+					<Title title="Settings" />
 					<Card>
 						<SettingsList>
 							{settingsOptions.map(option => (

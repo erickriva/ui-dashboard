@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "../../components/Button";
+import { IconButton } from "../../components/Button";
 import Card from "../../components/Card";
 import Flex from "../../components/Flex";
 import OnHoverScrollbar from "../../components/OnHoverScrollbar";
@@ -114,7 +114,7 @@ export const ContactIcons = styled.div`
 	gap: 8px;
 `;
 
-export const IconButton = styled(Button)`
+export const myIconButton = styled(IconButton)`
 	background-color: ${props => props.theme.colors.accent};
 	border: none;
 
@@ -180,7 +180,7 @@ export const OtherPersonIcons = styled.div`
 export const OtherPersonMessageDate = styled.div`
 	display: flex;
 	justify-content: flex-end;
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 	font-size: 1.4rem;
 `;
 
@@ -208,12 +208,12 @@ export const MyMessageContent = styled.div`
 export const MyMessageDate = styled.div`
 	display: flex;
 	justify-content: flex-end;
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 	font-size: 1.4rem;
 `;
 
 export const DateSeparator = styled.div`
-	border-bottom: 2px solid #888888;
+	border-bottom: 2px solid ${props => props.theme.commonColors.gray};
 	position: relative;
 	margin: 10px 30px;
 `;
@@ -227,7 +227,7 @@ export const DateSaparatorDescription = styled.div`
 	transform: translateX(-50%);
 	margin: auto;
 	font-size: 1.4rem;
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 `;
 
 export const FileData = styled.div`
@@ -288,7 +288,7 @@ export const SendMessageInput = styled.input`
 	color: ${props => props.theme.colors.textDark};
 `;
 
-export const SendMessageButton = styled(Button)`
+export const SendMessageButton = styled(IconButton)`
 	border: none;
 	color: #ffffff;
 
@@ -297,7 +297,7 @@ export const SendMessageButton = styled(Button)`
 	}
 `;
 
-export const SendAttachmentButton = styled(Button)`
+export const SendAttachmentButton = styled(IconButton)`
 	background-color: transparent;
 	border: none;
 
@@ -308,6 +308,6 @@ export const SendAttachmentButton = styled(Button)`
 	& svg {
 		width: 20px;
 		height: 20px;
-		color: #888888;
+		color: ${props => props.theme.commonColors.gray};
 	}
 `;

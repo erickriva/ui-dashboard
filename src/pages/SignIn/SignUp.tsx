@@ -3,7 +3,7 @@ import { Envelope, Lock, Person } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 
 import PublicLayout from "../../layouts/PublicLayout";
-import Button from "../../components/Button";
+import { Button } from "../../components/Button";
 import Card from "../../components/Card";
 import Flex from "../../components/Flex";
 import TextInput from "../../components/Input/TextInput";
@@ -17,10 +17,11 @@ import {
 	ProjectNameContainer,
 	ProjectSlogan,
 	SignInCardContent,
-	SignInForm,
-	Title
+	SignInForm
 } from "./styles";
 import LabeledInput from "../../components/LabeledInput";
+import Title from "../../components/Title";
+import { routes } from "../../routes";
 
 const SignUp: React.FC = () => {
 	const navigate = useNavigate();
@@ -35,7 +36,7 @@ const SignUp: React.FC = () => {
 				</LeftContent>
 				<Card>
 					<SignInCardContent>
-						<Title>Sign up</Title>
+						<Title title="Sign up" subtitle="Enter your data and enjoy" />
 
 						<SignInForm>
 							<LabeledInput label="Email">
@@ -48,12 +49,12 @@ const SignUp: React.FC = () => {
 							<LabeledInput label="Password">
 								<TextInput type="password" icon={<Lock />} placeholder="Your password" />
 							</LabeledInput>
-							<Button onClick={() => navigate("/")}>Sign up</Button>
+							<Button onClick={() => navigate(routes.Home)}>Sign up</Button>
 						</SignInForm>
 
 						<LinkContainer>
 							<Label>Already have an account?</Label>
-							<Link onClick={() => navigate("/signin")}>Sign in</Link>
+							<Link onClick={() => navigate(routes.SignIn)}>Sign in</Link>
 						</LinkContainer>
 					</SignInCardContent>
 				</Card>

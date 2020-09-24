@@ -12,11 +12,12 @@ import {
 } from "react-bootstrap-icons";
 import { animateScroll } from "react-scroll";
 import { v4 as uuid } from "uuid";
-import Button from "../../components/Button";
+import { IconButton } from "../../components/Button";
 
 import Card from "../../components/Card";
 import Flex from "../../components/Flex";
 import TextInput from "../../components/Input/TextInput";
+import Title from "../../components/Title";
 import DefaultLayout from "../../layouts/DefaultLayout";
 
 import {
@@ -28,7 +29,7 @@ import {
 	ContactStatus,
 	ContactName,
 	ContactIcons,
-	IconButton,
+	// IconButton,
 	ContactMessage,
 	ConversationCard,
 	ConversationCardContent,
@@ -71,7 +72,7 @@ const Chats: React.FC = () => {
 			<Flex height="100%">
 				<Flex flexDirection="column" gap={22} flex="0 0 30%" maxHeight="100vh" style={{ overflowY: "hidden" }}>
 					<AllConversationsHeader>
-						<AllConversationsTitle>All Conversations</AllConversationsTitle>
+						<Title title="All Conversations" />
 						<TextInput icon={<Search />} placeholder="Search Conversations" />
 					</AllConversationsHeader>
 					<ConversationCards>
@@ -105,9 +106,15 @@ const Chats: React.FC = () => {
 							</ContactData>
 
 							<ContactIcons>
-								<IconButton icon={<Search />} />
-								<IconButton icon={<Folder />} />
-								<IconButton icon={<ThreeDotsVertical />} />
+								<IconButton visualType="accent">
+									<Search />
+								</IconButton>
+								<IconButton visualType="accent">
+									<Folder />
+								</IconButton>
+								<IconButton visualType="accent">
+									<ThreeDotsVertical />
+								</IconButton>
 							</ContactIcons>
 						</ConversationHeader>
 
@@ -122,8 +129,12 @@ const Chats: React.FC = () => {
 										<OtherPersonMessageDate>5 days ago</OtherPersonMessageDate>
 									</OtherPersonMessage>
 									<OtherPersonIcons>
-										<SendAttachmentButton icon={<ThreeDots />} />
-										<SendAttachmentButton icon={<Reply />} />
+										<SendAttachmentButton>
+											<ThreeDots />
+										</SendAttachmentButton>
+										<SendAttachmentButton>
+											<Reply />
+										</SendAttachmentButton>
 									</OtherPersonIcons>
 								</OtherPersonMessageContainer>
 
@@ -154,8 +165,12 @@ const Chats: React.FC = () => {
 										<OtherPersonMessageDate>2 minutes ago</OtherPersonMessageDate>
 									</OtherPersonMessage>
 									<OtherPersonIcons>
-										<SendAttachmentButton icon={<ThreeDots />} />
-										<SendAttachmentButton icon={<Reply />} />
+										<SendAttachmentButton>
+											<ThreeDots />
+										</SendAttachmentButton>
+										<SendAttachmentButton>
+											<Reply />
+										</SendAttachmentButton>
 									</OtherPersonIcons>
 								</OtherPersonMessageContainer>
 
@@ -168,12 +183,18 @@ const Chats: React.FC = () => {
 
 						<SendMessageContainer>
 							<Flex gap={2}>
-								<SendAttachmentButton icon={<Paperclip />} />
-								<SendAttachmentButton icon={<Image />} />
+								<SendAttachmentButton>
+									<Paperclip />
+								</SendAttachmentButton>
+								<SendAttachmentButton>
+									<Image />
+								</SendAttachmentButton>
 							</Flex>
 
 							<SendMessageInput placeholder="Write your message" />
-							<SendMessageButton icon={<CursorFill />} />
+							<SendMessageButton>
+								<CursorFill />
+							</SendMessageButton>
 						</SendMessageContainer>
 					</ConversationContent>
 				</Card>

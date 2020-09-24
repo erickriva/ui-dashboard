@@ -1,29 +1,35 @@
 import styled from "styled-components";
 
-export const Input = styled.input`
+export const StyledSwitchContainer = styled.div`
+	position: relative;
+`;
+
+export const StyledSwitchInput = styled.input`
 	height: 0;
 	width: 0;
 	visibility: hidden;
+	position: absolute;
 `;
 
-interface LabelProps {
-	value: boolean;
-}
-export const Label = styled.label<LabelProps>`
+export const StyledSwitchLabel = styled.label`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	cursor: pointer;
 	width: 35px;
 	height: 19px;
-	background-color: ${props => (props.value ? props.theme.colors.default : "#888888")};
+	background-color: ${props => props.theme.commonColors.gray};
 	flex-shrink: 0;
 	border-radius: 100px;
 	position: relative;
 	transition: background-color 0.2s;
+
+	&.active {
+		background-color: ${props => props.theme.colors.default};
+	}
 `;
 
-export const Button = styled.span`
+export const StyledSwitchButton = styled.span`
 	content: "";
 	position: absolute;
 	top: 2px;
@@ -35,7 +41,7 @@ export const Button = styled.span`
 	background: #fff;
 	box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.3);
 
-	${Input}:checked + ${Label} & {
+	${StyledSwitchInput}:checked + ${StyledSwitchLabel} & {
 		left: calc(100% - 2px);
 		transform: translateX(-100%);
 	}

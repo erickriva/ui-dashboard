@@ -27,7 +27,7 @@ export const ContactNameAbbr = styled.div`
 
 export const ContactName = styled.div`
 	margin-left: 12px;
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 `;
 
 export const UserOptions = styled.div`
@@ -89,7 +89,7 @@ export const MenuItem = styled.div`
 	& > svg {
 		width: 20px;
 		height: 20px;
-		color: #888888;
+		color: ${props => props.theme.commonColors.gray};
 	}
 `;
 
@@ -99,7 +99,7 @@ export const UserData = styled.div`
 	cursor: pointer;
 
 	& > svg {
-		color: #888888;
+		color: ${props => props.theme.commonColors.gray};
 		width: 12px;
 		height: 12px;
 	}
@@ -109,10 +109,10 @@ export const UserPicture = styled.img`
 	width: 40px;
 	height: 40px;
 	border-radius: 20px;
-	border: 2px solid #888888;
+	border: 2px solid ${props => props.theme.commonColors.gray};
 `;
 
 export const UserName = styled.div`
 	margin: 0 8px;
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 `;

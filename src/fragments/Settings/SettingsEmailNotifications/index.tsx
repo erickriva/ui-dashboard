@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Check } from "react-bootstrap-icons";
-import Button from "../../../components/Button";
+import { Button } from "../../../components/Button";
 import Card from "../../../components/Card";
 import Flex from "../../../components/Flex";
 import Switch from "../../../components/Switch";
+import Title from "../../../components/Title";
 import { convertArrayToObject } from "../../../utils/arrayToObject";
 
-import { Container, Option, OptionDescription, OptionsContainer, Subtitle, Title, TitleContainer } from "./styles";
+import { Container, Option, OptionDescription, OptionsContainer } from "./styles";
 import { EmailNotificationOption } from "./types";
 
 const SettingsEmailNotifications: React.FC = () => {
@@ -34,26 +35,11 @@ const SettingsEmailNotifications: React.FC = () => {
 
 	return (
 		<>
-			<Flex flexDirection="column" style={{ alignSelf: "flex-end" }}>
-				<Button
-					outline
-					icon={<Check />}
-					visualType="success"
-					onClick={() =>
-						alert(`${Object.entries(switchStates).filter(([key, value]) => value).length} switches are on`)
-					}>
-					Save changes
-				</Button>
-			</Flex>
-
 			<Card>
 				<Flex flexDirection="column" flex="1 1 auto">
 					<Flex flex={1}>
 						<Container flexDirection="column" flex="0 1 50%">
-							<TitleContainer>
-								<Title>Activity Notifications</Title>
-								<Subtitle>Email me when:</Subtitle>
-							</TitleContainer>
+							<Title title="Activity Notifications" subtitle="I want to receive an email when:" />
 
 							<OptionsContainer>
 								{options1.map(option => {
@@ -73,10 +59,7 @@ const SettingsEmailNotifications: React.FC = () => {
 						</Container>
 
 						<Container flexDirection="column" flex="0 1 50%">
-							<TitleContainer>
-								<Title>Weekly Emails</Title>
-								<Subtitle>Email me every week about:</Subtitle>
-							</TitleContainer>
+							<Title title="Weekly Emails" subtitle="Email me every week about:" />
 
 							<OptionsContainer>
 								{options2.map(option => {
@@ -94,6 +77,20 @@ const SettingsEmailNotifications: React.FC = () => {
 								})}
 							</OptionsContainer>
 						</Container>
+					</Flex>
+
+					<Flex flexDirection="column" padding="0 16px 16px 16px" style={{ alignSelf: "flex-end" }}>
+						<Button
+							visualType="success"
+							onClick={() =>
+								alert(
+									`${
+										Object.entries(switchStates).filter(([key, value]) => value).length
+									} switches are on`
+								)
+							}>
+							Save my changes
+						</Button>
 					</Flex>
 				</Flex>
 			</Card>

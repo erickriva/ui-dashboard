@@ -30,7 +30,7 @@ export const Picture = styled.div`
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	background-color: #888888;
+	background-color: ${props => props.theme.commonColors.gray};
 	color: #ffffff;
 `;
 
@@ -47,5 +47,5 @@ export const NotificationContent = styled.div`
 
 export const NotificationDate = styled.div`
 	font-size: 1.4rem;
-	color: #888888;
+	color: ${props => props.theme.commonColors.gray};
 `;

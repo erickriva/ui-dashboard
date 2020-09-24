@@ -3,7 +3,7 @@ import { Lock, Person } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 
 import PublicLayout from "../../layouts/PublicLayout";
-import Button from "../../components/Button";
+import { Button } from "../../components/Button";
 import Card from "../../components/Card";
 import Flex from "../../components/Flex";
 import TextInput from "../../components/Input/TextInput";
@@ -17,10 +17,11 @@ import {
 	ProjectSlogan,
 	SignInCardContent,
 	SignInForm,
-	Title,
 	LeftContent
 } from "./styles";
 import LabeledInput from "../../components/LabeledInput";
+import Title from "../../components/Title";
+import { routes } from "../../routes";
 
 const SignIn: React.FC = () => {
 	const navigate = useNavigate();
@@ -36,25 +37,21 @@ const SignIn: React.FC = () => {
 				</LeftContent>
 				<Card>
 					<SignInCardContent>
-						<Title>Sign in</Title>
+						<Title title="Sign in" subtitle="Enter your data and enjoy" />
 
 						<SignInForm>
-							<LabeledInput label="Test">
-								<Button onClick={() => navigate("/")}>Sign in</Button>
-							</LabeledInput>
-
 							<LabeledInput label="Username">
 								<TextInput icon={<Person />} placeholder="Your username" />
 							</LabeledInput>
 							<LabeledInput label="Password">
 								<TextInput type="password" icon={<Lock />} placeholder="Your password" />
 							</LabeledInput>
-							<Button onClick={() => navigate("/")}>Sign in</Button>
+							<Button onClick={() => navigate(routes.Home)}>Sign in</Button>
 						</SignInForm>
 
 						<LinkContainer>
 							<Label>Don't have an account yet?</Label>
-							<Link onClick={() => navigate("/signup")}>Sign up</Link>
+							<Link onClick={() => navigate(routes.SignUp)}>Sign up</Link>
 						</LinkContainer>
 					</SignInCardContent>
 				</Card>

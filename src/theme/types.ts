@@ -1,4 +1,4 @@
-export type VisualType = "default" | "success" | "warning" | "danger";
+export type VisualType = "default" | "accent" | "success" | "warning" | "danger";
 
 export type ThemeType = "dark" | "light";
 

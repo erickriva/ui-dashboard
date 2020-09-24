@@ -2,13 +2,13 @@ import React, { useRef, useState, useEffect, useCallback } from "react";
 import classnames from "classnames";
 
 import {
-	Container,
-	Menu,
-	Title,
-	Separator,
-	Content,
-	Dropdown,
-	DropdownContent as DropdownContentStyled
+	StyledDropdownContentContainer,
+	StyledDropdownContentMenu,
+	StyledDropdownContentTitle,
+	StyledDropdownContentSeparator,
+	StyledDropdownContentContent,
+	StyledDropdownContentDropdown,
+	StyledDropdownContent
 } from "./styles";
 import { DropdownContentProps, MenuPosition } from "./types";
 import { useNodeRef } from "../../utils/useNodeRef";
@@ -66,30 +66,30 @@ const DropdownContent: React.FC<DropdownContentProps> = ({
 	};
 
 	return (
-		<Container>
-			<Content ref={contentRef} onClick={ev => setMenuState(!isOpen)}>
+		<StyledDropdownContentContainer>
+			<StyledDropdownContentContent ref={contentRef} onClick={ev => setMenuState(!isOpen)}>
 				{children}
 				{isOpen}
-			</Content>
+			</StyledDropdownContentContent>
 
-			<Menu
+			<StyledDropdownContentMenu
 				ref={menuRef}
 				style={{
 					...position,
 					display: isOpen ? "block" : "none",
 					width: dropdownWidths[size]
 				}}>
-				<Dropdown>
+				<StyledDropdownContentDropdown>
 					{title && (
 						<>
-							<Title>{title}</Title>
-							<Separator />
+							<StyledDropdownContentTitle>{title}</StyledDropdownContentTitle>
+							<StyledDropdownContentSeparator />
 						</>
 					)}
-					<DropdownContentStyled>{content(closeMenu)}</DropdownContentStyled>
-				</Dropdown>
-			</Menu>
-		</Container>
+					<StyledDropdownContent>{content(closeMenu)}</StyledDropdownContent>
+				</StyledDropdownContentDropdown>
+			</StyledDropdownContentMenu>
+		</StyledDropdownContentContainer>
 	);
 };
 

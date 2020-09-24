@@ -6,18 +6,6 @@ export const Container = styled(Flex)`
 	padding: 16px;
 `;
 
-export const TitleContainer = styled.div``;
-
-export const Title = styled.div`
-	font-size: 2rem;
-`;
-
-export const Subtitle = styled.div`
-	color: #888888;
-	font-size: 1.3rem;
-	text-transform: uppercase;
-`;
-
 export const OptionsContainer = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -43,6 +31,6 @@ export const OptionDescription = styled.div`
 	display: flex;
 	align-items: center;
 
-	font-size: 1.4rem;
-	text-transform: uppercase;
+	font-size: 1.5rem;
+	/* text-transform: uppercase; */
 `;

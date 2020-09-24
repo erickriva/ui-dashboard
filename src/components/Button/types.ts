@@ -1,10 +1,15 @@
 import { VisualType } from "../../theme/types";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	icon?: JSX.Element;
+interface ButtonBase extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	onClick?: () => void;
 	visualType?: VisualType;
 	isLoading?: boolean;
-	children?: string;
+
 	outline?: boolean;
+}
+
+export interface IconButtonProps extends ButtonBase {}
+
+export interface ButtonProps extends ButtonBase {
+	children: string;
 }
