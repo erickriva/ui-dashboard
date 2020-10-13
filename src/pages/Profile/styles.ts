@@ -99,7 +99,8 @@ export const ProfileButtonsContainer = styled.div`
 export const OverflowButton = styled(IconButton)`
 	background-color: rgba(255, 255, 255, 0.2);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: rgba(255, 255, 255, 0.3);
 	}
 `;

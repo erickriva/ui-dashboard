@@ -1,3 +1,1 @@
-export interface RenderProp<TChildrenProps, TElement = any> {
-	(props: TChildrenProps): React.ReactElement<TElement>;
-}
+export type RequireProps<T, TRequired extends keyof T> = Exclude<T, TRequired> & Required<Pick<T, TRequired>>;

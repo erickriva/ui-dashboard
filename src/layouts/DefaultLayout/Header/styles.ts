@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	grid-area: HE;
+	height: 70px;
+	position: fixed;
+	left: 0;
+	right: 0;
 
 	background-color: ${props => props.theme.colors.accent};
 	box-shadow: 0px 6px 6px 0px rgba(50, 50, 50, 0.08);
@@ -39,9 +42,9 @@ export const UserOptions = styled.div`
 
 export const IconsContainer = styled.div`
 	/* border-left: 2px solid ${props => props.theme.colors.border}; */
-	border-right: 2px solid ${props => props.theme.colors.border};
+	/* border-right: 2px solid ${props => props.theme.colors.border}; */
 
-	margin: 0 16px;
+	margin: 0 8px;
 
 	display: flex;
 	flex-direction: row;

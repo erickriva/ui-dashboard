@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "../../../components/Button";
 import Card from "../../../components/Card";
 import Flex from "../../../components/Flex";
+import Form from "../../../components/Form";
 import { TextInput } from "../../../components/Input";
 import LabeledInput from "../../../components/LabeledInput";
 import Title from "../../../components/Title";
@@ -27,29 +28,30 @@ const SettingsPassword: React.FC = () => {
 							subtitle="Here you can change your password, but first you'll have to verify your actual password"
 						/>
 
-						<LabeledInput label="Actual password">
-							<TextInput type="password" placeholder="Insert your actual password" />
-						</LabeledInput>
-
-						<NewPasswordContainer>
-							<LabeledInput label="New password">
-								<TextInput type="password" placeholder="Insert the new password" />
+						<Form>
+							<LabeledInput label="Actual password">
+								<TextInput type="password" placeholder="Insert your actual password" />
 							</LabeledInput>
 
-							<LabeledInput label="Repeat password">
-								<TextInput type="password" placeholder="Insert new password again" />
-							</LabeledInput>
+							<NewPasswordContainer>
+								<LabeledInput label="New password">
+									<TextInput type="password" placeholder="Insert the new password" />
+								</LabeledInput>
 
-							<Flex flexDirection="column" style={{ alignSelf: "flex-end" }}>
-								<Button visualType="success">change my password</Button>
-							</Flex>
-						</NewPasswordContainer>
+								<LabeledInput label="Repeat password">
+									<TextInput type="password" placeholder="Insert new password again" />
+								</LabeledInput>
+
+								<Flex flexDirection="column" style={{ alignSelf: "flex-end" }}>
+									<Button visualType="success">change my password</Button>
+								</Flex>
+							</NewPasswordContainer>
+						</Form>
 					</Flex>
 
 					<NewPasswordHintContainer>
 						<NewPasswordHint>
 							<NewPasswordHintTitle>Password must have:</NewPasswordHintTitle>
-
 							<NewPasswordHintItemsContainer>
 								<NewPasswordHintItem>at least 1 number or symbol.</NewPasswordHintItem>
 								<NewPasswordHintItem>both uppercase and lowercase characters.</NewPasswordHintItem>

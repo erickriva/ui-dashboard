@@ -22,6 +22,7 @@ import {
 import LabeledInput from "../../components/LabeledInput";
 import Title from "../../components/Title";
 import { routes } from "../../routes";
+import Form from "../../components/Form";
 
 const SignIn: React.FC = () => {
 	const navigate = useNavigate();
@@ -40,13 +41,15 @@ const SignIn: React.FC = () => {
 						<Title title="Sign in" subtitle="Enter your data and enjoy" />
 
 						<SignInForm>
-							<LabeledInput label="Username">
-								<TextInput icon={<Person />} placeholder="Your username" />
-							</LabeledInput>
-							<LabeledInput label="Password">
-								<TextInput type="password" icon={<Lock />} placeholder="Your password" />
-							</LabeledInput>
-							<Button onClick={() => navigate(routes.Home)}>Sign in</Button>
+							<Form>
+								<LabeledInput label="Username">
+									<TextInput icon={<Person />} placeholder="Your username" />
+								</LabeledInput>
+								<LabeledInput label="Password">
+									<TextInput type="password" icon={<Lock />} placeholder="Your password" />
+								</LabeledInput>
+								<Button onClick={() => navigate(routes.Home)}>Sign in</Button>
+							</Form>
 						</SignInForm>
 
 						<LinkContainer>

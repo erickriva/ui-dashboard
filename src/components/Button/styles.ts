@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { ButtonProps } from "./types";
 import { hex2rgba, lightenOrDarkenColor } from "../../utils/colors";
+import { RequireProps } from "../../utils/utilsType";
 
-export const LoadingIcon = styled.div``;
 export const Content = styled.div``;
+export const LoadingIcon = styled.div``;
 
-export const Container = styled.button<Omit<ButtonProps, "children">>`
-	background-color: ${props =>
-		props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default};
-	color: #ffffff;
+type ButtonWithoutChildrenAndVisualTypeRequired = RequireProps<Omit<ButtonProps, "children">, "visualType">;
+
+export const Container = styled.button<ButtonWithoutChildrenAndVisualTypeRequired>`
+	background-color: ${props => props.theme.colors[props.visualType]};
+	color: ${props => props.theme.commonColors.textLight};
 	cursor: pointer;
 	/* font-weight: bold; */
 
@@ -22,22 +24,19 @@ export const Container = styled.button<Omit<ButtonProps, "children">>`
 	transition: all 0.2s;
 	position: relative;
 
-	&:hover {
-		background-color: ${props =>
-			lightenOrDarkenColor(props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default)};
+	&:hover,
+	&:focus {
+		background-color: ${props => lightenOrDarkenColor(props.theme.colors[props.visualType])};
 	}
 
 	&.outline {
-		color: ${props => (props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default)};
+		color: ${props => props.theme.colors[props.visualType]};
 		background-color: transparent;
-		border-color: ${props =>
-			lightenOrDarkenColor(props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default)};
+		border-color: ${props => lightenOrDarkenColor(props.theme.colors[props.visualType])};
 
-		&:hover {
-			color: ${props =>
-				lightenOrDarkenColor(
-					props.visualType ? props.theme.colors[props.visualType] : props.theme.colors.default
-				)};
+		&:hover,
+		&:focus {
+			color: ${props => lightenOrDarkenColor(props.theme.colors[props.visualType])};
 		}
 	}
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { v4 as uuid } from "uuid";
 import { DateInput, TextArea, TextInput } from "../Input";
 
@@ -6,7 +6,7 @@ import { Container, Label } from "./styles";
 import { LabeledInputProps } from "./types";
 
 const LabeledInput: React.FC<LabeledInputProps> = ({ label, children }) => {
-	const fieldId = uuid();
+	const fieldId = useRef(uuid());
 
 	const getChildren = () => {
 		const childrenAny = children as React.ReactElement<any>;
@@ -33,8 +33,8 @@ const LabeledInput: React.FC<LabeledInputProps> = ({ label, children }) => {
 
 	return (
 		<Container>
-			<Label htmlFor={fieldId}>{label}</Label>
-			{React.cloneElement(allowedChildren, { id: fieldId })}
+			<Label htmlFor={fieldId.current}>{label}</Label>
+			{React.cloneElement(allowedChildren, { id: fieldId.current })}
 		</Container>
 	);
 };

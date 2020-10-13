@@ -1,10 +1,9 @@
 import { VisualType } from "../../theme/types";
 
 interface ButtonBase extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	onClick?: () => void;
+	// onClick?: () => void;
 	visualType?: VisualType;
 	isLoading?: boolean;
-
 	outline?: boolean;
 }
 

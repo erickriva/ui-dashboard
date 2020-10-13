@@ -8,10 +8,11 @@ export const MenuItemName = styled.div`
 `;
 
 export const Container = styled.div`
-	grid-area: SI;
-
+	width: 70px;
+	position: fixed;
 	background-color: ${props => props.theme.colors.accent};
 	z-index: 1;
+	height: 100%;
 `;
 
 export const MenuContainer = styled.div`

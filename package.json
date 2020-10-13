@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@closeio/use-infinite-scroll": "^1.0.0",
     "classnames": "^2.2.6",
     "history": "^5.0.0",
     "react": "^16.13.1",

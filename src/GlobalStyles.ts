@@ -37,12 +37,12 @@ export default createGlobalStyle<{ theme: Theme }>`
 
 		/* width */
 		::-webkit-scrollbar {
-			width: 8px;
+			width: 7px;
 		}
 
 		/* Track */
 		::-webkit-scrollbar-track {
-			border-radius: 32px;
+			background-color: ${props => props.theme.colors.accent};
 		}
 
 		/* Handle */
@@ -56,7 +56,7 @@ export default createGlobalStyle<{ theme: Theme }>`
 			padding: 0;
 			box-sizing: border-box;
 			font-family: "Google Sans";
-			
+			transition: background-color 0.2s, border-color 0.2s;
 		}
 
 		*,

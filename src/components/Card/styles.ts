@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { hex2rgba } from "../../utils/colors";
+import { RequireProps } from "../../utils/utilsType";
+import { CardProps } from "./types";
 
-export const Container = styled.div`
+type CardWithVisualTypeRequired = RequireProps<CardProps, "visualType">;
+
+export const StyledContainer = styled.div<CardWithVisualTypeRequired>`
 	padding: 16px;
 	border-radius: 4px;
 	background-color: ${props => props.theme.colors.accent};
@@ -11,17 +15,16 @@ export const Container = styled.div`
 	flex: 1 0 auto;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
 
 	&.active::before {
 		position: absolute;
 		border-top-left-radius: 4px;
 		border-bottom-left-radius: 4px;
-		width: 4px;
-		height: 100%;
-		left: 0;
-		top: 0;
-		background-color: ${props => props.theme.colors.default};
+		width: 5px;
+		left: -2px;
+		top: -2px;
+		bottom: -2px;
+		background-color: ${props => props.theme.colors[props.visualType]};
 		content: "";
 	}
 `;

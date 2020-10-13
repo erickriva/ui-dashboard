@@ -1,10 +1,9 @@
 import React from "react";
-
 import classnames from "classnames";
+import { ArrowRepeat } from "react-bootstrap-icons";
 
 import { Container, LoadingIcon, Content } from "./styles";
 import { ButtonProps } from "./types";
-import { ArrowRepeat } from "react-bootstrap-icons";
 
 const Button: React.FC<ButtonProps> = ({
 	className,

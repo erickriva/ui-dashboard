@@ -5,6 +5,11 @@ import Flex from "../../components/Flex";
 import OnHoverScrollbar from "../../components/OnHoverScrollbar";
 import { hex2rgba, lightenOrDarkenColor } from "../../utils/colors";
 
+export const SelectConversation = styled.div`
+	padding: 32px;
+	font-size: 1.8rem;
+`;
+
 export const Conversations = styled.div`
 	flex: 1;
 
@@ -29,7 +34,7 @@ export const AllConversationsTitle = styled.div`
 export const ConversationCards = styled(OnHoverScrollbar)`
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 6px;
 
 	height: 100%;
 	overflow-x: hidden !important;
@@ -39,10 +44,12 @@ export const ConversationCard = styled(Card)`
 	gap: 16px;
 	cursor: pointer;
 	flex-direction: row;
+	flex: 0;
 `;
 
 export const ConversationCardContent = styled.div`
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	gap: 8px;
 `;
@@ -114,11 +121,13 @@ export const ContactIcons = styled.div`
 	gap: 8px;
 `;
 
-export const myIconButton = styled(IconButton)`
+export const HeaderIconButton = styled(IconButton)`
 	background-color: ${props => props.theme.colors.accent};
 	border: none;
+	color: ${props => props.theme.colors.textDark};
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: ${props => lightenOrDarkenColor(props.theme.colors.accent)};
 	}
 
@@ -169,7 +178,7 @@ export const OtherPersonMessageContent = styled.div`
 
 export const OtherPersonIcons = styled.div`
 	display: flex;
-	gap: 2px;
+	gap: 4px;
 	align-items: center;
 
 	& svg {
@@ -269,8 +278,7 @@ export const FileDownload = styled.div`
 export const SendMessageContainer = styled.div`
 	background-color: transparent;
 	display: flex;
-	gap: 2px;
-	height: 70px;
+	gap: 16px;
 	padding: 8px 16px;
 	justify-content: center;
 	align-items: center;
@@ -279,13 +287,15 @@ export const SendMessageContainer = styled.div`
 	z-index: 1;
 `;
 
-export const SendMessageInput = styled.input`
+export const SendMessageInput = styled.textarea`
 	flex: 1;
 	padding: 10px 16px;
 	border-radius: 4px;
 	height: 100%;
-	background-color: ${props => props.theme.colors.accent};
+	background-color: ${props => props.theme.colors.background};
 	color: ${props => props.theme.colors.textDark};
+	height: 65px;
+	resize: none;
 `;
 
 export const SendMessageButton = styled(IconButton)`
@@ -300,8 +310,10 @@ export const SendMessageButton = styled(IconButton)`
 export const SendAttachmentButton = styled(IconButton)`
 	background-color: transparent;
 	border: none;
+	box-shadow: none;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: ${props => props.theme.colors.border};
 	}
 
