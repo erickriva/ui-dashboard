@@ -14,6 +14,7 @@ import SettingsContent from "./components/SettingsContent";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignIn/SignUp";
 import { routes } from "./routes";
+import ConversationMessages from "./fragments/ConversationMessages";
 
 function App() {
 	return (
@@ -26,8 +27,11 @@ function App() {
 						<Route path={routes.SignUp} element={<SignUp />} />
 
 						<Route path={routes.Home} element={<Home />} />
-						<Route path={routes.Chats} element={<Chats />} />
 						<Route path={routes.Profile} element={<Profile />} />
+
+						<Route path={routes.Chats} element={<Chats />}>
+							<Route path=":conversationId" element={<ConversationMessages />} />
+						</Route>
 
 						<Route path={routes.Settings} element={<Settings />}>
 							<Route path=":settingId" element={<SettingsContent />} />

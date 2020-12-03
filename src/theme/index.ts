@@ -18,7 +18,8 @@ const light: Theme = {
 		default: "#2165c7",
 		success: "#469040",
 		danger: "#ff8484",
-		warning: "#ffc359"
+		warning: "#ffc359",
+		notification: "red"
 	}
 };
 
@@ -34,7 +35,8 @@ const dark: Theme = {
 		default: "#2165c7",
 		success: "#469040",
 		danger: "#ff8484",
-		warning: "#ffc359"
+		warning: "#ffc359",
+		notification: "red"
 	}
 };
 

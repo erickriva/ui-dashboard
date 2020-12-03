@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { hex2rgba } from "../../../utils/colors";
 
 export const Container = styled.div`
 	height: 70px;
@@ -23,7 +24,7 @@ export const Contact = styled.div`
 
 export const ContactNameAbbr = styled.div`
 	padding: 8px;
-	background-color: rgba(33, 101, 199, 0.15);
+	background-color: ${props => hex2rgba(props.theme.colors.default, 0.15)};
 	border-radius: 6px;
 	color: ${props => props.theme.colors.default};
 `;
@@ -76,7 +77,7 @@ export const MenuItem = styled.div`
 		top: 4px;
 		right: 8px;
 		border-radius: 50%;
-		background: red;
+		background: ${props => props.theme.colors.notification};
 		color: white;
 
 		font-size: 1.1rem;

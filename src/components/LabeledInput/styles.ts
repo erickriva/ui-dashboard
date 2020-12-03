@@ -4,7 +4,6 @@ import { StyledTextInputContainer } from "../Input/styles";
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
 	font-size: 1.4rem;
 
 	& ${StyledTextInputContainer} {
@@ -14,4 +13,6 @@ export const Container = styled.div`
 
 export const Label = styled.label`
 	color: ${props => props.theme.colors.textDark};
+	padding-bottom: 4px;
+	padding-left: 2px;
 `;

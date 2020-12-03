@@ -10,6 +10,7 @@ export type IThemeColors<T = string> = {
 	textDark: T;
 	textLight: T;
 	border: T;
+	notification: T;
 };
 
 export interface Theme {
